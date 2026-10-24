@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hari Haran — UI/UX Designer &amp; Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6EADB;--ink:#24140E;--mute:#6B5547;--red:#E5461F;--card:#FFF6EA;--line:#24140E26;--on-red:#FFF6EA;
+--sans:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--serif:'Instrument Serif',Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B0F0A;--ink:#F6EADB;--mute:#B9A290;--card:#2A1812;--line:#F6EADB2e;--red:#FF5A2E;--on-red:#1B0F0A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1B0F0A;--ink:#F6EADB;--mute:#B9A290;--card:#2A1812;--line:#F6EADB2e;--red:#FF5A2E;--on-red:#1B0F0A;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 clamp(1rem,.95rem + .25vw,1.15rem)/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1240px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4.5rem,10vw,9rem) 0}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.95;margin:0}
+h2{font-size:clamp(2.6rem,8vw,6.5rem)}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.sub{color:var(--mute);max-width:56ch}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;text-decoration:none;letter-spacing:-.03em;font-size:1.2rem}
+.logo i{display:inline-block;width:.7em;height:.7em;border-radius:50%;background:var(--red);margin-right:.35em}
+.links{display:flex;gap:1.6rem;align-items:center}
+.links a{text-decoration:none;font-weight:600;font-size:.95rem;position:relative}
+.links a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.links a:hover::after,.links a.on::after{transform:scaleX(1)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:.45rem 1rem;font:600 .9rem var(--sans);cursor:pointer}
+.bar{position:absolute;left:0;bottom:-1px;height:3px;background:var(--red);width:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.7rem;border-radius:99px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:transform .25s,background .25s,color .25s;cursor:pointer;font-family:var(--sans);font-size:1rem}
+.btn.fill{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.btn:hover{transform:translateY(-3px)}
+.btn.fill:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.line:hover{background:var(--ink);color:var(--bg)}
+.pcard .btn{background:var(--red);border-color:var(--red);color:var(--on-red);padding:1.2rem 2.3rem;font-size:1.15rem;box-shadow:0 10px 24px -8px #0006}
+.pcard .btn::after{content:"→";transition:transform .25s}
+.pcard .btn:hover::after{transform:translateX(6px)}
+.pcard .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.pcard.alt .btn{background:var(--on-red);border-color:var(--on-red);color:var(--red)}
+
+/* hero */
+.hero{min-height:100svh;padding:calc(env(safe-area-inset-top,0px) + 110px) 0 3rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.hi{font-size:clamp(1.3rem,3vw,2.2rem)}
+.big{font-size:clamp(4.2rem,17.5vw,17rem);line-height:.82;letter-spacing:-.06em;margin:.15em 0 0;text-transform:none}
+.big span{display:block;overflow:hidden;padding-bottom:.06em}
+.big b{display:inline-block;font-weight:800;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+.big span:nth-child(2) b{animation-delay:.12s;color:var(--red)}
+@keyframes up{to{transform:none}}
+.role{font-size:clamp(1.2rem,2.6vw,2rem);font-weight:600;letter-spacing:-.02em;margin:1.6rem 0 .3rem}
+.hero-foot{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-end;margin-top:2rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.orb{position:absolute;right:max(1rem,4vw);top:20%;width:clamp(150px,22vw,300px);aspect-ratio:1;border-radius:50%;background:var(--red);display:grid;place-items:center;z-index:0;will-change:transform}
+.orb svg{width:62%;fill:none;stroke:var(--on-red);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(4deg)}}
+.hero .wrap{position:relative;z-index:1}
+.tick{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:.9rem 0;background:var(--ink);color:var(--bg)}
+.tick div{display:inline-flex;gap:2.5rem;animation:mq 28s linear infinite;font-weight:700;font-size:1.2rem}
+.tick em{font-family:var(--serif);font-weight:400}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* about */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:clamp(2rem,6vw,6rem);align-items:start;margin-top:3rem}
+.photo{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:var(--card);border:1.5px dashed var(--mute);display:grid;place-items:center;text-align:center;color:var(--mute);padding:2rem;position:relative;overflow:hidden}
+.photo::after{content:"";position:absolute;width:55%;aspect-ratio:1;border-radius:50%;background:var(--red);bottom:-12%;right:-12%;opacity:.9;z-index:0}
+.photo span{position:relative;z-index:1;font-weight:600}
+.lead{font-size:clamp(1.4rem,2.8vw,2.3rem);line-height:1.2;letter-spacing:-.02em;font-weight:600;margin:0 0 1.5rem}
+.phil{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.phil h3{font-size:1.8rem;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;margin-bottom:.6rem}
+.facts{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2rem}
+.facts dt{color:var(--mute);font-size:.85rem}.facts dd{margin:0;font-weight:700}
+
+/* projects */
+.proj{margin-bottom:2rem}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:32px;padding:clamp(1.2rem,3vw,3rem);display:grid;grid-template-columns:5fr 7fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;min-height:68vh;overflow:hidden}
+.pcard.alt{background:var(--red);color:var(--on-red);border-color:var(--red)}
+.pcard.alt .sub,.pcard.alt .tags li{color:inherit}
+.pcard.alt .btn{border-color:var(--on-red)}.pcard.alt .btn.line:hover{background:var(--on-red);color:var(--red)}
+.pn{font-family:var(--serif);font-style:italic;font-size:1.3rem}
+.pcard h3{font-size:clamp(2rem,4.6vw,4rem);margin:.4rem 0 1rem}
+.tags{list-style:none;padding:0;margin:1.2rem 0 1.8rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.tags li{border:1px solid currentColor;border-radius:99px;padding:.25rem .85rem;font-size:.88rem;font-weight:600;opacity:.9}
+.stage{perspective:1400px;display:grid;place-items:center}
+.dev{transition:transform .6s cubic-bezier(.2,.8,.2,1);transform:rotateY(-10deg) rotateX(4deg);transform-style:preserve-3d;width:100%}
+.pcard:hover .dev{transform:rotateY(0) rotateX(0) scale(1.03)}
+.laptop{width:100%}
+.lscreen{aspect-ratio:16/10;background:#111;border:10px solid #111;border-radius:14px 14px 0 0;overflow:hidden;position:relative}
+.lbase{height:14px;background:linear-gradient(#cfc6bc,#9d948a);border-radius:0 0 18px 18px;width:112%;margin-left:-6%}
+.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-weight:600;font-size:.9rem;color:#fff9;padding:1rem}
+.ph small{display:block;font-weight:400;opacity:.8}
+.ice .lscreen{background:linear-gradient(135deg,#bfe0a8,#f3ead0)}
+.ice .ph{color:#24140Eb0}
+.cone{position:absolute;width:15%;filter:drop-shadow(0 8px 6px #0003);animation:float 4s ease-in-out infinite}
+.cone.a{left:12%;top:14%}.cone.b{right:14%;top:30%;animation-delay:-1.5s;width:20%}.cone.c{left:44%;bottom:10%;animation-delay:-3s;width:11%}
+.phone{position:absolute;right:-2%;bottom:-8%;width:30%;aspect-ratio:9/18;background:#111;border-radius:26px;padding:7px;box-shadow:0 20px 40px #0005;transform:translateZ(60px)}
+.phone i{display:grid;place-items:center;background:#2b3a55;border-radius:20px;height:100%;color:#fff9;font:600 .7rem var(--sans);font-style:normal;text-align:center;padding:.5rem}
+.cur .lscreen{background:#1e2c46}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;width:100%}
+.mini div{aspect-ratio:9/16;background:#1b0f0a;border-radius:16px;border:6px solid #1b0f0a;display:grid;place-items:center;font-size:.72rem;color:#fff9;text-align:center;font-weight:600;padding:.4rem}
+.mini div:nth-child(2){transform:translateY(-18px)}
+
+/* skills */
+.skills{display:flex;flex-wrap:wrap;gap:.2rem 1.6rem;margin-top:3rem;align-items:baseline}
+.sk{font-size:clamp(2.2rem,6.6vw,6rem);font-weight:800;letter-spacing:-.045em;line-height:1.05;cursor:default;transition:color .3s,transform .3s}
+.sk.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+.sk:hover{color:var(--red);transform:translateY(-6px) rotate(-1.5deg)}
+
+/* contact */
+.contact{background:var(--red);color:var(--on-red);text-align:left;border-radius:40px 40px 0 0}
+.contact h2{font-size:clamp(3rem,11vw,10rem);line-height:.88}
+.mail{display:inline-block;margin:2.5rem 0;font-size:clamp(1.3rem,3.6vw,2.6rem);font-weight:700;letter-spacing:-.02em;text-decoration-thickness:3px;text-underline-offset:8px}
+.soc{display:flex;flex-wrap:wrap;gap:.8rem}
+.soc a{border:2px solid var(--on-red);border-radius:99px;padding:.8rem 1.5rem;font-weight:700;text-decoration:none;transition:.25s}
+.soc a:hover{background:var(--on-red);color:var(--red);transform:translateY(-3px)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:5rem;font-size:.9rem;opacity:.85}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0) * 90ms)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+ .menu{display:block}
+ .links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;padding:1rem 1.25rem 1.5rem;background:var(--bg);border-bottom:1px solid var(--line);display:none;gap:1rem}
+ .links.open{display:flex}
+ .about,.pcard,.csgrid{grid-template-columns:1fr}
+ .pcard{min-height:0}
+ .proj{position:relative;top:0;margin-bottom:1.5rem}
+ .photo{max-width:340px}
+ .orb{top:14%;opacity:.9}
+ .big{margin-top:.4em}
+}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *{animation:none!important;transition:none!important}
+ .big b,.rv{transform:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap"><nav aria-label="Main">
+  <a class="logo" href="#top"><i></i>Hari Haran</a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+  <div class="links" id="links">
+   <a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a class="btn fill" style="padding:.55rem 1.2rem" href="#contact">Contact</a>
+  </div>
+ </nav></div>
+ <div class="bar" id="bar"></div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:0">
+ <div class="orb" data-p=".12" aria-hidden="true">
+ </div>
+ <div class="wrap">
+  <p class="hi serif">Hi, I’m</p>
+  <h1 class="big" aria-label="Hari Haran"><span><b>Hari</b></span><span><b>Haran</b></span></h1>
+  <p class="role">UI/UX Designer &amp; Frontend Developer</p>
+  <div class="hero-foot">
+   <p class="sub serif" style="font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.1;margin:0;color:var(--ink)">I design meaningful digital experiences.</p>
+   <div class="cta"><a class="btn fill" href="#work">View My Work</a><a class="btn line" href="#contact">Contact Me</a></div>
+  </div>
+ </div>
+ <div class="tick" style="margin-top:3rem" aria-hidden="true"><div>
+  <span>Figma</span><em>wireframes</em><span>User flows</span><em>prototypes</em><span>HTML · CSS · JS</span><em>accessibility</em>
+  <span>Figma</span><em>wireframes</em><span>User flows</span><em>prototypes</em><span>HTML · CSS · JS</span><em>accessibility</em>
+ </div></div>
+</section>
+
+<section id="about"><div class="wrap">
+ <h2 class="rv">Design with<br><span class="serif">a reason.</span></h2>
+ <div class="about">
+  <div class="photo rv" data-p="-.04"><span>Profile image placeholder<br><small>Replace with your photo</small></span></div>
+  <div>
+   <p class="lead rv" style="--d:1">I’m a UI/UX designer and frontend developer who turns ideas into clear, usable screens, then builds them in code.</p>
+   <p class="sub rv" style="--d:2">My background in English taught me to listen closely, structure information, and choose words that help people. I bring that into every interface, from the first research question to the final line of CSS.</p>
+   <div class="phil rv" style="--d:3"><h3>Design philosophy</h3><p class="sub" style="margin:0">Good design feels obvious. I start with the person using the product, keep interfaces simple and accessible, and test ideas early so each decision has a reason.</p></div>
+   <dl class="facts rv" style="--d:4"><div><dt>Education</dt><dd>BA English</dd></div><div><dt>Design tool</dt><dd>Figma</dd></div><div><dt>Builds with</dt><dd>HTML, CSS, JavaScript</dd></div></dl>
+  </div>
+ </div>
+</div></section>
+
+<section id="work" style="padding-bottom:3rem"><div class="wrap">
+ <h2 class="rv" style="margin-bottom:3rem">Selected <span class="serif">work</span></h2>
+
+ <article class="proj"><div class="pcard">
+  <div>
+   <span class="pn">Project one</span>
+   <h3>Smart Currency Document Reader</h3>
+   <p class="sub">An accessibility-focused mobile app that helps people read documents and handle currency with confidence.</p>
+   <ul class="tags"><li>Document scanning &amp; OCR</li><li>Currency recognition &amp; conversion</li><li>Read-aloud</li><li>AI Smart Correction</li></ul>
+   <a class="btn fill" href="#contact">View Case Study</a>
+  </div>
+  <div class="stage"><div class="dev cur"><div class="laptop"><div class="lscreen"><div class="ph"><span>Add Figma screens here<small>Replace this block with your screenshot</small></span></div></div><div class="lbase"></div></div>
+   <div class="phone"><i>App screen<br>placeholder</i></div></div></div>
+ </div></article>
+
+ <article class="proj"><div class="pcard alt">
+  <div>
+   <span class="pn">Project two</span>
+   <h3>Premium Ice Cream Website</h3>
+   <p class="sub">A modern ice cream brand website with premium pistachio and other flavour visuals, 3D floating ice cream elements, smooth scrolling and playful animations.</p>
+   <ul class="tags"><li>Brand website</li><li>3D floating elements</li><li>Smooth scrolling</li><li>Playful motion</li></ul>
+   <a class="btn line" href="#contact">View Project</a>
+  </div>
+  <div class="stage"><div class="dev ice"><div class="laptop"><div class="lscreen"><div class="ph"><span>Add website screenshot here</span></div>
+   <svg class="cone a" viewBox="0 0 100 130" fill="none" stroke="#24140E" stroke-width="4" stroke-linejoin="round"><circle cx="50" cy="38" r="30" fill="#9CCB7A"/><path d="M22 58l28 66 28-66z" fill="#E9B872"/></svg>
+   <svg class="cone b" viewBox="0 0 100 130" fill="none" stroke="#24140E" stroke-width="4" stroke-linejoin="round"><circle cx="50" cy="38" r="30" fill="#F4A6B8"/><path d="M22 58l28 66 28-66z" fill="#E9B872"/></svg>
+   <svg class="cone c" viewBox="0 0 100 130" fill="none" stroke="#24140E" stroke-width="4" stroke-linejoin="round"><circle cx="50" cy="38" r="30" fill="#F6EADB"/><path d="M22 58l28 66 28-66z" fill="#E9B872"/></svg>
+  </div><div class="lbase"></div></div></div></div>
+ </div></article>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2 class="rv">What I <span class="serif">work with</span></h2>
+ <div class="skills rv" style="--d:1">
+  <span class="sk">Figma</span><span class="sk s">UI/UX Design</span><span class="sk">Wireframing</span><span class="sk s">Prototyping</span>
+  <span class="sk">User Research</span><span class="sk s">Information Architecture</span><span class="sk">HTML</span><span class="sk s">CSS</span><span class="sk">JavaScript</span>
+ </div>
+</div></section>
+</main>
+
+<section class="contact" id="contact"><div class="wrap">
+ <h2 class="rv">Let’s create something meaningful.</h2>
+ <a class="mail rv" href="mailto:hariharan7138@gmail.com">hariharan7138@gmail.com</a>
+ <div class="soc rv">
+  <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
+  <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+ </div>
+ <footer><span>© 2026 Hari Haran</span><span>Links are placeholders until you add your own.</span><a href="#top">Back to top</a></footer>
+</div></section>
+
+<script>
+(function(){
+ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // reveal
+ var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+ // mobile menu
+ var m=document.getElementById('menu'),l=document.getElementById('links');
+ m.onclick=function(){var o=l.classList.toggle('open');m.setAttribute('aria-expanded',o)};
+ l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');m.setAttribute('aria-expanded',false)}});
+ // progress bar, nav state, parallax
+ var bar=document.getElementById('bar'),pe=document.querySelectorAll('[data-p]'),t=false;
+ var navA=[].slice.call(document.querySelectorAll('.links a[href^="#"]:not(.btn)'));
+ function tick(){
+  var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  bar.style.width=(h>0?y/h*100:0)+'%';
+  navA.forEach(function(a){var s=document.querySelector(a.getAttribute('href')),r=s.getBoundingClientRect();a.classList.toggle('on',r.top<innerHeight*.4&&r.bottom>innerHeight*.4)});
+  t=false;
+ }
+ addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(tick)}},{passive:true});
+ tick();
+})();
+</script>
+</body>
+</html>
